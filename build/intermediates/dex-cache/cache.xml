@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/dongjiang/AndroidStudioProjects/NpuCar/app/libs/Npu.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="122649e890c9377a41bb85126039172c3f16b2e2">
+        <dex dex="/Users/dongjiang/AndroidStudioProjects/NpuCar/app/build/intermediates/pre-dexed/debug/Npu_3377b93be3b10cacf5ef314c2fbcb667fca7af19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/dongjiang/AndroidStudioProjects/NpuCar/app/libs/Ice.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2afcda717de952eae0befd30bd6b39c4e2880a03">
+        <dex dex="/Users/dongjiang/AndroidStudioProjects/NpuCar/app/build/intermediates/pre-dexed/debug/Ice_8274dd8f7317558064be3b2f5613438a04b1f90e.jar" />
+    </item>
+
+</items>

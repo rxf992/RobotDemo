@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">NpuCar</string>
+    <string name="et1" translatable="false">0.00</string>
+    <string name="str_m">m</string>
+    <string name="str_rad">rad</string>
+    <string name="str_ip">192.168.188.100</string>
+    <string name="str_scan">扫描</string>
+    <string name="str_getlist" translatable="false">获取地图列表</string>
+    <string name="str_gohome" translatable="false">到目的地</string>
+    <string name="str_init" translatable="false">连接NPU</string>
+    <string name="str_iptext" translatable="false">IP:</string>
+    <string name="str_isinited" translatable="false">连接状态</string>
+    <string name="str_killall">停止所有</string>
+    <string name="str_mapf">分辨率=</string>
+    <string name="str_maph">地图高=</string>
+    <string name="str_mapw">地图宽=</string>
+    <string name="str_pause">暂停</string>
+    <string name="str_save">保存地图</string>
+    <string name="str_select">地图选点</string>
+    <string name="str_setgoalpose">设置目的地2位置</string>
+    <string name="str_sethomepose">设置目的地1位置</string>
+    <string name="str_setinitpose">设置初始位</string>
+    <string name="str_startgetmap">开始获取地图</string>
+    <string name="str_stopgetmap">停止获取地图</string>
+    <string name="str_startnavi">自由导航</string>
+    <string name="str_stopnavi">停止导航</string>
+    <string name="str_startslam">开始建图</string>
+    <string name="str_stopslam">停止建图</string>
+    <string name="str_status">状态</string>
+    <string name="str_stop">停止</string>
+    <string name="str_actencoder" translatable="false">编码器数据</string>
+    <string name="str_actvel" translatable="false">实际速度数据x,y,yaw</string>
+    <string name="str_actpose" translatable="false">NPU坐标定位数据x,y,yaw</string>
+    <string name="str_navivel">指令速度数据x,y,yaw</string>
+    <string name="str_reboot">重启</string>
+    <string name="str_shutdown">关机</string>
+    <string name="str_warming">警告</string>
+    <string name="str_warnreboot">是否要重启NPU?</string>
+    <string name="str_warnshutdown">是否要关机?</string>
+    <string name="str_notice">输入地图名称</string>
+    <string name="str_notice_inputmapname">请勿使用特殊字符;  若为空,则不保存。</string>
+    <string name="str_ok">是</string>
+    <string name="str_no">否</string>
+    <string name="str_iknow" translatable="false">我知道了!</string>
+    <string name="str_movefwd">前进</string>
+    <string name="str_movebck">后退</string>
+    <string name="str_turnlft">左转</string>
+    <string name="str_turnrgt">右转</string>
+    <string name="str_movefwdlft">左前</string>
+    <string name="str_movefwdrgt">右前</string>
+    <string name="str_stopmove">停止</string>
+    <string name="str_selecting">正在选择中</string>
+    <string name="str_deletemaplist" translatable="false">删除保存地图</string>
+    <string name="str_savefail">选择地图失败!</string>
+    <string name="str_saveing">正在保存</string>
+    <string name="str_starttrack">开始导航</string>
+    <string name="str_stoptrack">停止导航</string>
+    <string name="str_keepon" translatable="false">继续</string>
+    <string name="str_shutdownwarm">请重启NPU</string>
+    <string name="str_initsucc" translatable="false">初始化NPU成功</string>
+    <string name="str_addgoal" translatable="false">设置目标点</string>
+    <string name="str_delgoal">删除目标点</string>
+    <string name="str_selsure">确定</string>
+    <string name="str_goallisthead" translatable="false">目的地</string>
+    <string name="str_setmultigoal">设置多目标点</string>
+    <string name="str_setpathpose">自动添加路径</string>
+    <string name="str_savepathpose">保存</string>
+</resources>

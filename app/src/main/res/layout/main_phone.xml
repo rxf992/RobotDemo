@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="8.5"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="matrix" />
+
+            <TextView
+                android:id="@+id/tv_act_pose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_act_motor_spd"
+                android:text="当前位置:0.0,0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_robot_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_act_motor_spd"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_act_pose"
+                android:text="NPU状态:Waiting"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/tv_mapinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地图信息:0,0,0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_cmd_vel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_mapinfo"
+                android:text="指令速度:0,0,0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_act_vel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_cmd_vel"
+                android:text="当前速度:0,0,0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_cmd_motor_spd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_mapinfo"
+                android:layout_marginLeft="30dp"
+                android:layout_toEndOf="@+id/tv_act_pose"
+                android:layout_toRightOf="@+id/tv_act_pose"
+                android:text="电机指令速度:0,0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_act_motor_spd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_cmd_motor_spd"
+                android:layout_alignStart="@+id/tv_cmd_motor_spd"
+                android:layout_below="@+id/tv_cmd_motor_spd"
+                android:text="电机实际速度:0,0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_cmd_motor_spd"
+                android:layout_alignLeft="@+id/tv_cmd_motor_spd"
+                android:layout_alignStart="@+id/tv_cmd_motor_spd"
+                android:layout_weight="0.06"
+                android:text="0.0.0.0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_wifi_strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_toEndOf="@+id/tv_ip"
+                android:layout_toRightOf="@+id/tv_ip"
+                android:layout_weight="0.15"
+                android:text="0"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/ibt_delete_map"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+            <CheckBox
+                android:id="@+id/cb_lidar_display"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_act_motor_spd"
+                android:layout_toLeftOf="@+id/cb_path_display"
+                android:layout_toStartOf="@+id/cb_path_display"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="true"
+                android:text="雷达"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="8sp" />
+
+            <CheckBox
+                android:id="@+id/cb_path_display"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cb_lidar_display"
+                android:layout_toLeftOf="@+id/cb_station_display"
+                android:layout_toStartOf="@+id/cb_station_display"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="true"
+                android:text="路径"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="8sp" />
+
+            <CheckBox
+                android:id="@+id/cb_station_display"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cb_path_display"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="true"
+                android:text="站点"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="8sp" />
+
+            <ImageButton
+                android:id="@+id/ibt_pause"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/cb_lidar_display"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/cb_lidar_display"
+                android:layout_marginBottom="11dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/stop1" />
+
+            <ImageButton
+                android:id="@+id/ibt_cancel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/ibt_pause"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/ibt_pause"
+                android:layout_toRightOf="@+id/ibt_pause"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/cancel1" />
+
+            <Button
+                android:id="@+id/bt_reboot"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+
+                android:layout_alignTop="@+id/ibt_pause"
+                android:layout_column="0"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_toLeftOf="@+id/cb_lidar_display"
+                android:layout_toStartOf="@+id/cb_lidar_display"
+                android:layout_weight="1"
+                android:background="@drawable/reboot1"
+                android:textSize="10sp"
+                android:visibility="visible" />
+
+            <com.wizrobo.npucar.JoystickView
+                android:id="@+id/joystickLeft"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignBottom="@+id/ibt_pause"
+                android:layout_marginLeft="20dp"
+                android:elevation="21dp" />
+
+            <Button
+                android:id="@+id/btn_connection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连接舵机"
+                android:layout_below="@+id/btn_disconnection"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btn_disconnection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="断开舵机连接"
+                android:layout_below="@+id/btn_down"
+                android:layout_toLeftOf="@+id/tv_act_motor_spd"
+                android:layout_toStartOf="@+id/tv_act_motor_spd" />
+
+            <Button
+                android:id="@+id/btn_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部抬起"
+                android:layout_below="@+id/tv_act_pose"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="13dp" />
+
+            <Button
+                android:id="@+id/btn_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部降下"
+                android:layout_below="@+id/tv_act_pose"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="64dp" />
+
+            <Button
+                android:id="@+id/btn_down_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="降下1舵机"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/btn_up_1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <Button
+                android:id="@+id/btn_up_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="升起1舵机"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/btn_connection"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/Spinnermaplist"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_column="0"
+            android:layout_marginRight="3dp"
+            android:layout_row="0"
+            android:background="@drawable/spinner" />
+
+        <ExpandableListView
+            android:id="@+id/elv_function"
+            android:layout_width="match_parent"
+            android:layout_height="51dp" />
+
+        <ScrollView
+            android:id="@+id/sv_control"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.09">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.07"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/sp_path_station"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_column="0"
+                            android:layout_columnSpan="4"
+                            android:layout_marginLeft="0dp"
+                            android:layout_row="5"
+                            android:background="@drawable/spinner" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.13"
+                        android:orientation="horizontal">
+
+                        <ExpandableListView
+                            android:id="@+id/elv_setting"
+                            android:layout_width="match_parent"
+                            android:layout_height="41dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <ExpandableListView
+                            android:id="@+id/elv"
+                            android:layout_width="match_parent"
+                            android:layout_height="115dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
